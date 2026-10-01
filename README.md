@@ -1,11 +1,38 @@
-# ECE 528/L - Robotics and Embedded Systems Lab
-**CSU Northridge**
+# Overview
+The lab touches upon the standard GPIO interface that is built on the MSP432. This can interact with all the different ports that exist within the system. Either mapping them to inputs or outputs, the bit mask helps designate much of the features provided in the MSP432. The GPIO is controlled through several registers that determines the features such as what is mentioned above. 
 
-**Department of Electrical and Computer Engineering**
+# Components Used
+- MSP432 LaunchPad (1)
+- USB-A to Micro-USB Cable (1)
+- PMOD 8LD (1)
+- PMOD SWT (1)
 
-## GPIO Lab
-The GPIO lab interfaces with the following:
+# Analysis and Results
+All PMOD LEDs and Switches correctly operated when enabled. The function implementations worked correctly physically. Software wise the scripts provided no errors or warnings. No issues were discovered with the system. 
 
-* User buttons and LEDs of the TI MSP432 LaunchPad
-* PMOD SWT (4 Slide Switches) - [Product Link](https://digilent.com/reference/pmod/pmodswt/start)
-* PMOD 8LD (8 LEDs) - [Product Link](https://digilent.com/shop/pmod-8ld-eight-high-brightness-leds/)
+LED_Pattern_1 function operated correctly when the buttons were selected performing each output with the LEDs and PMOD correctly.
+
+LED_Pattern_3 did a binary down counter correctly with SWT2 being enabled.
+
+LED_Pattern_4 generated a ring counter correctly with SWT3.
+
+LED_Pattern_5 did a reverse ring counter correctly, an inverse of pattern 4 with SWT4.
+
+Johnson_Counter correcly iterated its pattern when SWT0 and SWT1 were enabled.
+
+![alt text](ece528L_lab0_gpio_port1.png)
+
+![alt text](ece528L_lab0_gpio_port2.png)
+
+![alt text](ece528L_lab0_gpio_port9.png)
+
+![alt text](ece528L_lab0_gpio_port10.png)
+
+# Known Issues or Limitations
+None observed
+
+# References
+- MSP432P4xx SimpleLink Microcontrollers Technical Reference Manual: https://web.archive.org/web/20200402132841/http:/www.ti.com/lit/ug/slau356i/slau356i.pdf
+- PMOD SWT Reference Manual: https://digilent.com/reference/pmod/pmodswt/reference-manual
+- PMOD LED Reference Manual: https://reference.digilentinc.com/reference/pmod/pmodled/reference-manual
+- PMOD 8LD Reference Manual: https://digilent.com/reference/pmod/pmod8ld/reference-manual
