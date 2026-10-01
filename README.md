@@ -20,13 +20,14 @@ LED_Pattern_5 did a reverse ring counter correctly, an inverse of pattern 4 with
 
 Johnson_Counter correcly iterated its pattern when SWT0 and SWT1 were enabled.
 
-![alt text](ece528L_lab0_gpio_port1.png)
+<img width="490" height="381" alt="ece528L_lab0_gpio_port1" src="https://github.com/user-attachments/assets/4eff599e-7e8b-4412-b58e-a5166d82900d" />
 
-![alt text](ece528L_lab0_gpio_port2.png)
+<img width="489" height="427" alt="ece528L_lab0_gpio_port2" src="https://github.com/user-attachments/assets/75b82f2d-be1a-4f70-86de-d2acdf2c6011" />
 
-![alt text](ece528L_lab0_gpio_port9.png)
+<img width="490" height="428" alt="ece528L_lab0_gpio_port9" src="https://github.com/user-attachments/assets/428ae0b0-2e14-4576-85e0-4452a96a80d8" />
 
-![alt text](ece528L_lab0_gpio_port10.png)
+<img width="490" height="427" alt="ece528L_lab0_gpio_port10" src="https://github.com/user-attachments/assets/2ba62f75-4102-43e4-87cb-0a9ccaee0c8a" />
+
 
 # Known Issues or Limitations
 None observed
