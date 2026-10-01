@@ -302,9 +302,9 @@ uint8_t Get_PMOD_SWT_Status(void);
  *
  *  button_status      LED 1 Color      RGB LED Color
  *  -------------      -----------      -------------
- *      0x00               Red              Red
+ *      0x00           Red (Toggled)    Green (Toggled)
  *      0x10               Red              Off
- *      0x02               Off              Green
+ *      0x02               Off              Blue
  *      0x12               Off              Off
  *
  *
@@ -326,6 +326,58 @@ void LED_Pattern_1(uint8_t button_status);
  * @return None
  */
 void LED_Pattern_2(void);
+
+/**
+ * @brief The LED_Pattern_3 function controls the user LEDs and the eight LEDs on the PMOD 8LD module.
+ *
+ * This function turns on the LED 1 with a red color, then it sets the RGB LED to display a blue color,
+ * and then it initiates a binary down counter on the PMOD 8LD module. The counter begins its count from 255 (0xFF)
+ * all the way down to 0 with a delay of 100 ms between each count down. The sequence stops if
+ * a specific switch status is detected or if led_count has reached 0.
+ *
+ * @param None
+ *
+ * @return None
+ */
+void LED_Pattern_3(void);
+
+/**
+ * @brief The LED_Pattern_4 function controls the eight LEDs on the PMOD 8LD module.
+ *
+ * When a user enables/toggles SWT3, the PMOD 8LD will start shifting the "1" bit to the left every 200 ms.
+ * Once another switch is enabled, the pattern and function overall will stop as it needs to be the only switch
+ * solely enabled. The LED 1 and RGB LED will be disabled during the operation.
+ *
+ * @param None
+ *
+ * @return None
+ */
+void LED_Pattern_4(void);
+
+/**
+ * @brief The LED_Pattern_5 function shares the same function of LED_Pattern_4 PMOD 8LD module.
+ *
+ * When a user enables/toggles SWT4, the PMOD 8LD will start sifting the "1" bit in the most significant position
+ * to the right until it reaches its original position. Once another switch is enabled, the function will stop.
+ * LED 1 and RGB LED will be disabled during this operation.
+ *
+ * @param None
+ *
+ * @return None
+ */
+void LED_Pattern_5(void);
+
+/**
+ * @brief The Johnson_Counter function takes no arguments. It generates a 8-bit Johnson also known as a twisted ring
+ * counter pattern. It utilizes SWT0 and SWT1 being active to start generating and only that combination will enable it.
+ * It starts by shifting a "1" bit while inserting the previous MSB into bit 0 creating a trail of zeroes. Once the
+ * PMOD reaches 0xFF, it will then begin to insert zeroes and shift until it reaches its default starting state, 0x00.
+ *
+ * @param adder
+ *
+ * @return None
+ */
+void Johnson_Counter(void);
 
 /**
  * @brief The LED_Controller function selects and executes an appropriate LED pattern based on button and switch statuses.
